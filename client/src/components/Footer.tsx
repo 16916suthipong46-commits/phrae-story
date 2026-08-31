@@ -34,7 +34,7 @@ export default function Footer() {
         <div>
           <p className="text-xs font-bold tracking-[0.14em] text-[#f5d692]">จัดทำโดย</p>
           <p className="mt-4 font-display text-xl font-semibold">นาย สุทธิพงศ์ รัตนพันธ์</p>
-          <p className="mt-2 text-sm text-white/65">ผลงานการศึกษาระดับชั้นมัธยมศึกษา</p>
+          <p className="mt-2 text-sm text-white/65">ผลงานการศึกษาระดับชั้นมัธยมศึกษาปีที่ 6</p>
           <a href="#top" aria-label="Instagram" className="mt-5 inline-grid h-9 w-9 place-items-center border border-white/25 text-white/80 hover:border-[#f5d692] hover:text-[#f5d692]"><Instagram className="h-4 w-4" /></a>
         </div>
       </div>
