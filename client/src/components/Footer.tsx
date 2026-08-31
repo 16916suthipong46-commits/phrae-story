@@ -1,7 +1,7 @@
 /**
  * Phrae Field Notes: บทปิดท้ายใช้พื้นเขียวป่าและตราช่อแฮ เป็นหน้าสุดท้ายของสมุดบันทึกการเดินทาง
  */
-import { ArrowUp, Instagram, MapPin } from "lucide-react";
+import { ArrowUp, ExternalLink, Instagram, MapPin } from "lucide-react";
 import BrandMark from "./BrandMark";
 
 export default function Footer() {
@@ -29,7 +29,11 @@ export default function Footer() {
         <div>
           <p className="text-xs font-bold tracking-[0.14em] text-[#f5d692]">จังหวัดแพร่</p>
           <p className="mt-4 flex items-center gap-2 text-sm text-white/75"><MapPin className="h-4 w-4 text-[#f5d692]" /> ภาคเหนือ ประเทศไทย</p>
-          <a href="#history" className="mt-4 inline-block text-sm font-medium text-white/90 hover:text-[#f5d692]">กลับไปอ่านเรื่องราวของเมือง</a>
+          <p className="mt-6 text-xs font-bold tracking-[0.14em] text-[#f5d692]">วิธีการเดินทาง</p>
+          <div className="mt-3 flex flex-col items-start gap-2">
+            <a href="https://www.google.com/maps/search/?api=1&query=Phrae%2C%20Thailand" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-white/90 hover:text-[#f5d692]">ดูจังหวัดแพร่บน Google Maps <ExternalLink className="h-3.5 w-3.5" /></a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Phrae%2C%20Thailand" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-[#f5d692]">เริ่มเส้นทางไปจังหวัดแพร่ <ExternalLink className="h-3.5 w-3.5" /></a>
+          </div>
         </div>
         <div>
           <p className="text-xs font-bold tracking-[0.14em] text-[#f5d692]">จัดทำโดย</p>
