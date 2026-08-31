@@ -1,25 +1,46 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Phrae Field Notes: หน้าบันทึกการเดินทางแนว Contemporary Vernacular Editorial ใช้ครีม ไม้สัก เขียวป่า และทองช่อแฮ
  */
+import { useEffect } from "react";
+import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
+import GeographySection from "@/components/GeographySection";
+import HeroVideo from "@/components/HeroVideo";
+import HighlightSection from "@/components/HighlightSection";
+import HistorySection from "@/components/HistorySection";
+import Navbar from "@/components/Navbar";
+import TouristSpots from "@/components/TouristSpots";
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -28px" }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen overflow-x-hidden bg-[#f8f2e8] text-[#2d2118]">
+      <Navbar />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroVideo />
+        <HistorySection />
+        <GeographySection />
+        <TouristSpots />
+        <HighlightSection />
+        <Gallery />
       </main>
+      <Footer />
     </div>
   );
 }
